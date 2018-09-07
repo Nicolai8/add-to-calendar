@@ -1,0 +1,59 @@
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c|Open+Sans');
+
+    body {
+      font-family: 'Open Sans', 'M PLUS Rounded 1c', sans-serif;
+    }
+  </style>
+  <!-- build:css add-to-calendar.min.css -->
+  <link href="add-to-calendar.css" rel="stylesheet" type="text/css">
+  <!-- endbuild -->
+  <!-- build:css themes/blue.min.css -->
+  <link href="themes/blue.css" rel="stylesheet" type="text/css">
+  <!-- endbuild -->
+  <script>
+    var atcOverrides = {
+      language: 'es',
+      translations: {
+       buttonText: 'Añadir al Calendario Global | Variable overrides'
+      }
+    };
+  </script>
+</head>
+<body>
+
+<p>Get settings from <code>atcOverrides</code></p>
+<span class="addtocalendar atc-style-blue">
+  <var class="atc_event">
+    <var class="atc_date_start">2018-09-05T12:00:00.000Z</var>
+    <var class="atc_date_end">2018-09-05T18:00:00.000Z</var>
+    <var class="atc_timezone">Europe/London</var>
+    <var class="atc_title">Star Wars Day Party</var>
+    <var class="atc_description">May the force be with you</var>
+    <var class="atc_location">Tatooine</var>
+    <var class="atc_organizer">Luke Skywalker</var>
+    <var class="atc_organizer_email">luke@starwars.com</var>
+  </var>
+</span>
+<p>Get settings from <code>atcOverrides</code> with overrides by <code>data-*</code> attributes</p>
+<span class="addtocalendar atc-style-blue" data-atc-language="jp" data-atc-translations='{"buttonText": "カレンダーに追加 | Attribute Override"}'>
+  <var class="atc_event">
+    <var class="atc_date_start">2018-09-05T12:00:00.000Z</var>
+    <var class="atc_date_end">2018-09-05T18:00:00.000Z</var>
+    <var class="atc_timezone">Europe/London</var>
+    <var class="atc_title">Star Wars Day Party</var>
+    <var class="atc_description">May the force be with you</var>
+    <var class="atc_location">Tatooine</var>
+    <var class="atc_organizer">Luke Skywalker</var>
+    <var class="atc_organizer_email">luke@starwars.com</var>
+  </var>
+</span>
+<!-- build:js add-to-calendar.min.js -->
+<script type="text/javascript" src="add-to-calendar.js" async></script>
+<!-- endbuild -->
+</body>
+</html>

@@ -1,0 +1,62 @@
+.atc-style-blue {
+  .atcb-link,
+  .atcb-link:hover,
+  .atcb-link:active,
+  .atcb-link:focus {
+    margin: 0;
+    padding: 7px 25px;
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+    outline: none;
+    line-height: 20px;
+    vertical-align: middle;
+    background: #4281f4;
+    box-shadow: 0 0 40px rgba(0, 0, 0, .13) inset;
+    border-radius: 4px;
+    zoom: 1
+  }
+
+  .atcb-list {
+    width: 170px;
+    border: 1px solid #bababa;
+    border-radius: 2px;
+    box-shadow: 0 0 5px #AAA
+  }
+
+  .atcb-list,
+  .atcb-item {
+    background: #fff;
+    color: #000
+  }
+
+  .atcb-item,
+  .atcb-item-link {
+    line-height: 1.3em;
+    vertical-align: middle;
+    zoom: 1
+  }
+
+  .atcb-item-link,
+  .atcb-item-link:hover,
+  .atcb-item-link:active,
+  .atcb-item-link:focus {
+    color: #000;
+    font-size: 14px;
+    text-decoration: none;
+    outline: none;
+    padding: 5px 15px
+  }
+
+  .atcb-item-link:hover,
+  .atcb-item-link:active,
+  .atcb-item-link:focus {
+    color: #fff
+  }
+
+  .atcb-item.hover,
+  .atcb-item:hover {
+    background: #4281f4
+  }
+
+}

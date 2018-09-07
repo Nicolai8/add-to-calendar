@@ -1,0 +1,7 @@
+node_modules/
+dist/*
+!dist/add-to-calendar*
+.tmp/
+app.yaml
+.idea/
+.vscode/
