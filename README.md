@@ -79,13 +79,18 @@ import 'add-to-calendar';
 </span>
 ```
 
-### Manually
+### Manually (ES6)
 
-1. Add dependency
+1. Install dependency
+```
+npm i @nicolai8/add-to-calendar
+```
+  
 2. Import method
 ```javascript
 import { createCalendar } from 'add-to-calendar';
 ```
+
 3. Call it with `element`, `settings` and `eventParams`
 ```javascript
 const element = document.getElementById('addToCalendarButton');

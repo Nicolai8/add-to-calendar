@@ -1,5 +1,5 @@
 {
-  "name": "add-to-calendar",
+  "name": "@nicolai8/add-to-calendar",
   "version": "1.0.0",
   "description": "customizable JavaScript widget 'Add to Calendar' for event page.",
   "main": "src/add-to-calendar.js",
