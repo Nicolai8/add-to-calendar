@@ -1,6 +1,6 @@
 {
   "name": "add-to-calendar",
-  "version": "1.0.3",
+  "version": "1.0.0",
   "description": "customizable JavaScript widget 'Add to Calendar' for event page.",
   "main": "src/add-to-calendar.js",
   "module": "src/add-to-calendar.js",
