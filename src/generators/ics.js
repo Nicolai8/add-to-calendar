@@ -1,11 +1,6 @@
-import icsAtcGenerator from './ics-atc';
 import { calculateEndTime, convertEventParamsFromATC, formatTime, isIE } from './utils';
 
 const generator = (eventsParams) => {
-  if (isIE() < 10) {
-    return icsAtcGenerator(eventsParams);
-  }
-
   eventsParams = convertEventParamsFromATC(eventsParams[0]);
   const startTime = formatTime(eventsParams.start);
   const endTime = calculateEndTime(eventsParams);

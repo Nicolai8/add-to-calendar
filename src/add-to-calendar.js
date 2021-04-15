@@ -111,14 +111,13 @@ const getCalendarLink = (settings, eventParams, element, calendarType) => {
   const calendarLinkId = element.id === '' ? '' : (`id="${element.id}_${calendarType}_link"`);
   const linkTitle = settings.translations[calendarType];
 
-  // ics can't be downloaded in IE10-11 without hacks like in other browsers
-  if (isIE() >= 10 && (calendarType === calendarTypes.outlook || calendarType === calendarTypes.iCalendar)) {
+  // ics can't be downloaded in IE11 without hacks like in other browsers
+  if (isIE() >= 11 && (calendarType === calendarTypes.outlook || calendarType === calendarTypes.iCalendar)) {
     return `<a ${calendarLinkId} class="atcb-item-link ${calendarType}" data-event='${JSON.stringify(eventParams)}'>${linkTitle}</a>`;
   }
 
   let generator = calendarGenerators[calendarType];
   if (!generator) {
-    generator = icsGenerator;
     console.warn(`Generator for '${calendarType}' not found, will be used ics instead`);
     return '';
   }
@@ -129,14 +128,7 @@ const getCalendarLink = (settings, eventParams, element, calendarType) => {
 const downloadIcs = (event) => {
   const ext = '.ics';
   const filename = 'event';
-  let blob;
-  if (isIE() < 11) {
-    const bb = new MSBlobBuilder();
-    bb.append(event);
-    blob = bb.getBlob('text/x-vCalendar;charset=utf8');
-  } else {
-    blob = new Blob([event]);
-  }
+  const blob = new Blob([event]);
   FileSaver.saveAs(blob, filename + ext);
 };
 

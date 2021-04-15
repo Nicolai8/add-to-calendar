@@ -1,6 +1,6 @@
 {
   "name": "@nicolai8/add-to-calendar",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "customizable JavaScript widget 'Add to Calendar' for event page.",
   "main": "src/add-to-calendar.js",
   "module": "src/add-to-calendar.js",
@@ -14,9 +14,6 @@
   },
   "homepage": "https://github.com/Nicolai8/add-to-calendar#readme",
   "license": "MIT",
-  "engines": {
-    "node": ">=8.0.0"
-  },
   "eslintConfig": {
     "extends": "google"
   },
@@ -57,5 +54,9 @@
     "lodash.keys": "^4.2.0",
     "nodelist-foreach-polyfill": "^1.2.0",
     "string.prototype.startswith": "^0.2.0"
-  }
+  },
+  "browserslist": [
+    "ie >= 11",
+    "last 2 versions"
+  ]
 }

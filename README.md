@@ -1,5 +1,5 @@
 https://github.com/AddToCalendar/addtocalendar is now part of https://www.addevent.com/ and in future will be suspended at all.
-So, this is almost complete rewrite of that library, with fallback to its old url for IE8-9.
+So, this is almost complete rewrite of that library.
 
 
 ### Setup
@@ -107,13 +107,9 @@ createCalendar(element, settings, event);
 
 ### Browser Support
 ```
-* IE10+ (.ics is working via Blob)
+* IE11+ (.ics is working via Blob)
 * last 2 versions of major browsers
 ```
-Outlook and iCalendar (these 2 uses .ics file), aren't directly supported in `IE9-`. 
-So, as a fallback https://github.com/AddToCalendar/addtocalendar service is used.
-
-`IE8` will require ES5 polyfills. 
 
 ### Notes
 

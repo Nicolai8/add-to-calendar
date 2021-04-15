@@ -17,11 +17,11 @@ module.exports = function browserLocale () {
 }
 
 },{}],2:[function(require,module,exports){
-(function (global){
+(function (global){(function (){
 (function(a,b){if("function"==typeof define&&define.amd)define([],b);else if("undefined"!=typeof exports)b();else{b(),a.FileSaver={exports:{}}.exports}})(this,function(){"use strict";function b(a,b){return"undefined"==typeof b?b={autoBom:!1}:"object"!=typeof b&&(console.warn("Deprecated: Expected third argument to be a object"),b={autoBom:!b}),b.autoBom&&/^\s*(?:text\/\S*|application\/xml|\S*\/\S*\+xml)\s*;.*charset\s*=\s*utf-8/i.test(a.type)?new Blob(["\uFEFF",a],{type:a.type}):a}function c(b,c,d){var e=new XMLHttpRequest;e.open("GET",b),e.responseType="blob",e.onload=function(){a(e.response,c,d)},e.onerror=function(){console.error("could not download file")},e.send()}function d(a){var b=new XMLHttpRequest;b.open("HEAD",a,!1);try{b.send()}catch(a){}return 200<=b.status&&299>=b.status}function e(a){try{a.dispatchEvent(new MouseEvent("click"))}catch(c){var b=document.createEvent("MouseEvents");b.initMouseEvent("click",!0,!0,window,0,0,0,80,20,!1,!1,!1,!1,0,null),a.dispatchEvent(b)}}var f="object"==typeof window&&window.window===window?window:"object"==typeof self&&self.self===self?self:"object"==typeof global&&global.global===global?global:void 0,a=f.saveAs||("object"!=typeof window||window!==f?function(){}:"download"in HTMLAnchorElement.prototype?function(b,g,h){var i=f.URL||f.webkitURL,j=document.createElement("a");g=g||b.name||"download",j.download=g,j.rel="noopener","string"==typeof b?(j.href=b,j.origin===location.origin?e(j):d(j.href)?c(b,g,h):e(j,j.target="_blank")):(j.href=i.createObjectURL(b),setTimeout(function(){i.revokeObjectURL(j.href)},4E4),setTimeout(function(){e(j)},0))}:"msSaveOrOpenBlob"in navigator?function(f,g,h){if(g=g||f.name||"download","string"!=typeof f)navigator.msSaveOrOpenBlob(b(f,h),g);else if(d(f))c(f,g,h);else{var i=document.createElement("a");i.href=f,i.target="_blank",setTimeout(function(){e(i)})}}:function(a,b,d,e){if(e=e||open("","_blank"),e&&(e.document.title=e.document.body.innerText="downloading..."),"string"==typeof a)return c(a,b,d);var g="application/octet-stream"===a.type,h=/constructor/i.test(f.HTMLElement)||f.safari,i=/CriOS\/[\d]+/.test(navigator.userAgent);if((i||g&&h)&&"object"==typeof FileReader){var j=new FileReader;j.onloadend=function(){var a=j.result;a=i?a:a.replace(/^data:[^;]*;/,"data:attachment/file;"),e?e.location.href=a:location=a,e=null},j.readAsDataURL(a)}else{var k=f.URL||f.webkitURL,l=k.createObjectURL(a);e?e.location=l:location.href=l,e=null,setTimeout(function(){k.revokeObjectURL(l)},4E4)}});f.saveAs=a.saveAs=a,"undefined"!=typeof module&&(module.exports=a)});
 
 
-}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+}).call(this)}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{}],3:[function(require,module,exports){
 /**
  * lodash (Custom Build) <https://lodash.com/>
@@ -1132,7 +1132,7 @@ if (!String.prototype.startsWith) {
 }
 
 },{}],7:[function(require,module,exports){
-"use strict";Object.defineProperty(exports, "__esModule", { value: true });exports.autoLoad = exports.createCalendar = void 0;var _browserLocale = _interopRequireDefault(require("browser-locale"));
+"use strict";function _typeof(obj) {"@babel/helpers - typeof";if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {_typeof = function _typeof(obj) {return typeof obj;};} else {_typeof = function _typeof(obj) {return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;};}return _typeof(obj);}Object.defineProperty(exports, "__esModule", { value: true });exports.autoLoad = exports.createCalendar = void 0;var _browserLocale = _interopRequireDefault(require("browser-locale"));
 require("nodelist-foreach-polyfill");
 var FileSaver = _interopRequireWildcard(require("file-saver"));
 var _lodash = _interopRequireDefault(require("lodash.assign"));
@@ -1150,7 +1150,7 @@ var _de = _interopRequireDefault(require("./translations/de"));
 var _es = _interopRequireDefault(require("./translations/es"));
 var _fr = _interopRequireDefault(require("./translations/fr"));
 var _jp = _interopRequireDefault(require("./translations/jp"));
-var _ru = _interopRequireDefault(require("./translations/ru"));var _calendarGenerators;function _getRequireWildcardCache() {if (typeof WeakMap !== "function") return null;var cache = new WeakMap();_getRequireWildcardCache = function _getRequireWildcardCache() {return cache;};return cache;}function _interopRequireWildcard(obj) {if (obj && obj.__esModule) {return obj;}var cache = _getRequireWildcardCache();if (cache && cache.has(obj)) {return cache.get(obj);}var newObj = {};if (obj != null) {var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;for (var key in obj) {if (Object.prototype.hasOwnProperty.call(obj, key)) {var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;if (desc && (desc.get || desc.set)) {Object.defineProperty(newObj, key, desc);} else {newObj[key] = obj[key];}}}}newObj.default = obj;if (cache) {cache.set(obj, newObj);}return newObj;}function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+var _ru = _interopRequireDefault(require("./translations/ru"));var _calendarGenerators;function _getRequireWildcardCache() {if (typeof WeakMap !== "function") return null;var cache = new WeakMap();_getRequireWildcardCache = function _getRequireWildcardCache() {return cache;};return cache;}function _interopRequireWildcard(obj) {if (obj && obj.__esModule) {return obj;}if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") {return { default: obj };}var cache = _getRequireWildcardCache();if (cache && cache.has(obj)) {return cache.get(obj);}var newObj = {};var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;for (var key in obj) {if (Object.prototype.hasOwnProperty.call(obj, key)) {var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;if (desc && (desc.get || desc.set)) {Object.defineProperty(newObj, key, desc);} else {newObj[key] = obj[key];}}}newObj.default = obj;if (cache) {cache.set(obj, newObj);}return newObj;}function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
 
 var languages = {
   cn: (0, _lodash.default)({}, _en.default, _cn.default),
@@ -1245,14 +1245,13 @@ var getCalendarLink = function getCalendarLink(settings, eventParams, element, c
   var calendarLinkId = element.id === '' ? '' : "id=\"".concat(element.id, "_").concat(calendarType, "_link\"");
   var linkTitle = settings.translations[calendarType];
 
-  // ics can't be downloaded in IE10-11 without hacks like in other browsers
-  if ((0, _utils.isIE)() >= 10 && (calendarType === calendarTypes.outlook || calendarType === calendarTypes.iCalendar)) {
+  // ics can't be downloaded in IE11 without hacks like in other browsers
+  if ((0, _utils.isIE)() >= 11 && (calendarType === calendarTypes.outlook || calendarType === calendarTypes.iCalendar)) {
     return "<a ".concat(calendarLinkId, " class=\"atcb-item-link ").concat(calendarType, "\" data-event='").concat(JSON.stringify(eventParams), "'>").concat(linkTitle, "</a>");
   }
 
   var generator = calendarGenerators[calendarType];
   if (!generator) {
-    generator = _ics.default;
     console.warn("Generator for '".concat(calendarType, "' not found, will be used ics instead"));
     return '';
   }
@@ -1263,14 +1262,7 @@ var getCalendarLink = function getCalendarLink(settings, eventParams, element, c
 var downloadIcs = function downloadIcs(event) {
   var ext = '.ics';
   var filename = 'event';
-  var blob;
-  if ((0, _utils.isIE)() < 11) {
-    var bb = new MSBlobBuilder();
-    bb.append(event);
-    blob = bb.getBlob('text/x-vCalendar;charset=utf8');
-  } else {
-    blob = new Blob([event]);
-  }
+  var blob = new Blob([event]);
   FileSaver.saveAs(blob, filename + ext);
 };
 
@@ -1320,7 +1312,7 @@ var autoLoad = function autoLoad() {
 
 autoLoad();
 
-},{"./generators/google":8,"./generators/ics":10,"./generators/utils":11,"./generators/yahoo":12,"./translations/cn":13,"./translations/de":14,"./translations/en":15,"./translations/es":16,"./translations/fr":17,"./translations/jp":18,"./translations/ru":19,"browser-locale":1,"file-saver":2,"lodash.assign":3,"lodash.keys":4,"nodelist-foreach-polyfill":5,"string.prototype.startswith":6}],8:[function(require,module,exports){
+},{"./generators/google":8,"./generators/ics":9,"./generators/utils":10,"./generators/yahoo":11,"./translations/cn":12,"./translations/de":13,"./translations/en":14,"./translations/es":15,"./translations/fr":16,"./translations/jp":17,"./translations/ru":18,"browser-locale":1,"file-saver":2,"lodash.assign":3,"lodash.keys":4,"nodelist-foreach-polyfill":5,"string.prototype.startswith":6}],8:[function(require,module,exports){
 "use strict";Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _utils = require("./utils");
 
 var generator = function generator(eventsParams) {
@@ -1341,43 +1333,10 @@ var generator = function generator(eventsParams) {
 
 generator;exports.default = _default;
 
-},{"./utils":11}],9:[function(require,module,exports){
-"use strict";Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _lodash = _interopRequireDefault(require("lodash.keys"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-
-/** @license https://github.com/AddToCalendar/addtocalendar The MIT License (MIT) Copyright (c) 2015 AddToCalendar */
-var atc_url = 'addtocalendar.com/atc/';
-var atc_version = '1.5';
-var generator = function generator(eventsParams) {
-  eventsParams = eventsParams.map(function (eventParams, i) {
-    var eventParamsArray = (0, _lodash.default)(eventParams).map(function (paramName) {
-      var paramValue = eventParams[paramName];
-      return "e[".concat(i, "][").concat(paramName, "]=").concat(encodeURIComponent(paramValue));
-    });
-    return eventParamsArray.join('&');
-  });
-
-  var utz = -new Date().getTimezoneOffset().toString();
-
-  var urlParameters = ["utz=".concat(
-  utz), "uln=".concat(
-  navigator.language), "vjs=".concat(
-  atc_version)].
-  concat(eventsParams);
-
-  return "https://".concat(atc_url, "outlook?").concat(urlParameters.join('&'));
-};var _default =
-
-generator;exports.default = _default;
-
-},{"lodash.keys":4}],10:[function(require,module,exports){
-"use strict";Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _icsAtc = _interopRequireDefault(require("./ics-atc"));
-var _utils = require("./utils");function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+},{"./utils":10}],9:[function(require,module,exports){
+"use strict";Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _utils = require("./utils");
 
 var generator = function generator(eventsParams) {
-  if ((0, _utils.isIE)() < 10) {
-    return (0, _icsAtc.default)(eventsParams);
-  }
-
   eventsParams = (0, _utils.convertEventParamsFromATC)(eventsParams[0]);
   var startTime = (0, _utils.formatTime)(eventsParams.start);
   var endTime = (0, _utils.calculateEndTime)(eventsParams);
@@ -1404,7 +1363,7 @@ var generator = function generator(eventsParams) {
 
 generator;exports.default = _default;
 
-},{"./ics-atc":9,"./utils":11}],11:[function(require,module,exports){
+},{"./utils":10}],10:[function(require,module,exports){
 "use strict";Object.defineProperty(exports, "__esModule", { value: true });exports.isIE = exports.convertEventParamsFromATC = exports.calculateEndTime = exports.formatTime = exports.MS_IN_MINUTES = void 0;var _lodash = _interopRequireDefault(require("lodash.assign"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
 var MS_IN_MINUTES = 60 * 1000;exports.MS_IN_MINUTES = MS_IN_MINUTES;
@@ -1451,7 +1410,7 @@ var isIE = function isIE() {
   return ie;
 };exports.isIE = isIE;
 
-},{"lodash.assign":3}],12:[function(require,module,exports){
+},{"lodash.assign":3}],11:[function(require,module,exports){
 "use strict";Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _utils = require("./utils");
 
 var generator = function generator(eventsParams) {
@@ -1487,15 +1446,15 @@ var generator = function generator(eventsParams) {
 
 generator;exports.default = _default;
 
-},{"./utils":11}],13:[function(require,module,exports){
+},{"./utils":10}],12:[function(require,module,exports){
 "use strict";Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
   buttonText: '添加到日历' };exports.default = _default;
 
-},{}],14:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 "use strict";Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
   buttonText: 'In den Kalender' };exports.default = _default;
 
-},{}],15:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 "use strict";Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
   buttonText: 'Add to Calendar',
   iCalendar: 'iCalendar',
@@ -1503,19 +1462,19 @@ generator;exports.default = _default;
   outlook: 'Outlook',
   yahoo: 'Yahoo! Calendar' };exports.default = _default;
 
-},{}],16:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 "use strict";Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
   buttonText: 'Añadir al Calendario' };exports.default = _default;
 
-},{}],17:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 "use strict";Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
   buttonText: 'Ajouter au calendrier' };exports.default = _default;
 
-},{}],18:[function(require,module,exports){
+},{}],17:[function(require,module,exports){
 "use strict";Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
   buttonText: 'カレンダーに追加' };exports.default = _default;
 
-},{}],19:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 "use strict";Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
   buttonText: 'Добавить в календарь' };exports.default = _default;
 
