@@ -107,7 +107,7 @@ createCalendar(element, settings, event);
 
 ### Browser Support
 ```
-* IE11+ (.ics is working via Blob)
+* IE11 (.ics is working via Blob) (requires `startsWith` polyfill)
 * last 2 versions of major browsers
 ```
 

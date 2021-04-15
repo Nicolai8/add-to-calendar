@@ -3,7 +3,6 @@ import 'nodelist-foreach-polyfill';
 import * as FileSaver from 'file-saver';
 import assign from 'lodash.assign';
 import keys from 'lodash.keys';
-import 'string.prototype.startswith';
 
 import icsGenerator from './generators/ics';
 import googleGenerator from './generators/google';

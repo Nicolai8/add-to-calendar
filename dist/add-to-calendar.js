@@ -1075,69 +1075,11 @@ if (window.NodeList && !NodeList.prototype.forEach) {
 }
 
 },{}],6:[function(require,module,exports){
-/*! http://mths.be/startswith v0.2.0 by @mathias */
-if (!String.prototype.startsWith) {
-	(function() {
-		'use strict'; // needed to support `apply`/`call` with `undefined`/`null`
-		var defineProperty = (function() {
-			// IE 8 only supports `Object.defineProperty` on DOM elements
-			try {
-				var object = {};
-				var $defineProperty = Object.defineProperty;
-				var result = $defineProperty(object, object, object) && $defineProperty;
-			} catch(error) {}
-			return result;
-		}());
-		var toString = {}.toString;
-		var startsWith = function(search) {
-			if (this == null) {
-				throw TypeError();
-			}
-			var string = String(this);
-			if (search && toString.call(search) == '[object RegExp]') {
-				throw TypeError();
-			}
-			var stringLength = string.length;
-			var searchString = String(search);
-			var searchLength = searchString.length;
-			var position = arguments.length > 1 ? arguments[1] : undefined;
-			// `ToInteger`
-			var pos = position ? Number(position) : 0;
-			if (pos != pos) { // better `isNaN`
-				pos = 0;
-			}
-			var start = Math.min(Math.max(pos, 0), stringLength);
-			// Avoid the `indexOf` call if no match is possible
-			if (searchLength + start > stringLength) {
-				return false;
-			}
-			var index = -1;
-			while (++index < searchLength) {
-				if (string.charCodeAt(start + index) != searchString.charCodeAt(index)) {
-					return false;
-				}
-			}
-			return true;
-		};
-		if (defineProperty) {
-			defineProperty(String.prototype, 'startsWith', {
-				'value': startsWith,
-				'configurable': true,
-				'writable': true
-			});
-		} else {
-			String.prototype.startsWith = startsWith;
-		}
-	}());
-}
-
-},{}],7:[function(require,module,exports){
 "use strict";function _typeof(obj) {"@babel/helpers - typeof";if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {_typeof = function _typeof(obj) {return typeof obj;};} else {_typeof = function _typeof(obj) {return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;};}return _typeof(obj);}Object.defineProperty(exports, "__esModule", { value: true });exports.autoLoad = exports.createCalendar = void 0;var _browserLocale = _interopRequireDefault(require("browser-locale"));
 require("nodelist-foreach-polyfill");
 var FileSaver = _interopRequireWildcard(require("file-saver"));
 var _lodash = _interopRequireDefault(require("lodash.assign"));
 var _lodash2 = _interopRequireDefault(require("lodash.keys"));
-require("string.prototype.startswith");
 
 var _ics = _interopRequireDefault(require("./generators/ics"));
 var _google = _interopRequireDefault(require("./generators/google"));
@@ -1312,7 +1254,7 @@ var autoLoad = function autoLoad() {
 
 autoLoad();
 
-},{"./generators/google":8,"./generators/ics":9,"./generators/utils":10,"./generators/yahoo":11,"./translations/cn":12,"./translations/de":13,"./translations/en":14,"./translations/es":15,"./translations/fr":16,"./translations/jp":17,"./translations/ru":18,"browser-locale":1,"file-saver":2,"lodash.assign":3,"lodash.keys":4,"nodelist-foreach-polyfill":5,"string.prototype.startswith":6}],8:[function(require,module,exports){
+},{"./generators/google":7,"./generators/ics":8,"./generators/utils":9,"./generators/yahoo":10,"./translations/cn":11,"./translations/de":12,"./translations/en":13,"./translations/es":14,"./translations/fr":15,"./translations/jp":16,"./translations/ru":17,"browser-locale":1,"file-saver":2,"lodash.assign":3,"lodash.keys":4,"nodelist-foreach-polyfill":5}],7:[function(require,module,exports){
 "use strict";Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _utils = require("./utils");
 
 var generator = function generator(eventsParams) {
@@ -1333,7 +1275,7 @@ var generator = function generator(eventsParams) {
 
 generator;exports.default = _default;
 
-},{"./utils":10}],9:[function(require,module,exports){
+},{"./utils":9}],8:[function(require,module,exports){
 "use strict";Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _utils = require("./utils");
 
 var generator = function generator(eventsParams) {
@@ -1363,7 +1305,7 @@ var generator = function generator(eventsParams) {
 
 generator;exports.default = _default;
 
-},{"./utils":10}],10:[function(require,module,exports){
+},{"./utils":9}],9:[function(require,module,exports){
 "use strict";Object.defineProperty(exports, "__esModule", { value: true });exports.isIE = exports.convertEventParamsFromATC = exports.calculateEndTime = exports.formatTime = exports.MS_IN_MINUTES = void 0;var _lodash = _interopRequireDefault(require("lodash.assign"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
 var MS_IN_MINUTES = 60 * 1000;exports.MS_IN_MINUTES = MS_IN_MINUTES;
@@ -1410,7 +1352,7 @@ var isIE = function isIE() {
   return ie;
 };exports.isIE = isIE;
 
-},{"lodash.assign":3}],11:[function(require,module,exports){
+},{"lodash.assign":3}],10:[function(require,module,exports){
 "use strict";Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _utils = require("./utils");
 
 var generator = function generator(eventsParams) {
@@ -1446,15 +1388,15 @@ var generator = function generator(eventsParams) {
 
 generator;exports.default = _default;
 
-},{"./utils":10}],12:[function(require,module,exports){
+},{"./utils":9}],11:[function(require,module,exports){
 "use strict";Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
   buttonText: '添加到日历' };exports.default = _default;
 
-},{}],13:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 "use strict";Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
   buttonText: 'In den Kalender' };exports.default = _default;
 
-},{}],14:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 "use strict";Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
   buttonText: 'Add to Calendar',
   iCalendar: 'iCalendar',
@@ -1462,21 +1404,21 @@ generator;exports.default = _default;
   outlook: 'Outlook',
   yahoo: 'Yahoo! Calendar' };exports.default = _default;
 
-},{}],15:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 "use strict";Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
   buttonText: 'Añadir al Calendario' };exports.default = _default;
 
-},{}],16:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 "use strict";Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
   buttonText: 'Ajouter au calendrier' };exports.default = _default;
 
-},{}],17:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 "use strict";Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
   buttonText: 'カレンダーに追加' };exports.default = _default;
 
-},{}],18:[function(require,module,exports){
+},{}],17:[function(require,module,exports){
 "use strict";Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
   buttonText: 'Добавить в календарь' };exports.default = _default;
 
-},{}]},{},[7])(7)
+},{}]},{},[6])(6)
 });
